@@ -1,5 +1,5 @@
 const DEFAULT_LEVELS = ["ECD A","ECD B","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7"];
-const DEFAULT_SUBJECTS = ["Heritage Studies","Maths","Heritage Maths","English","Agriculture"];
+
 const DEFAULT_TERMS = ["Term 1","Term 2","Term 3"];
 const SEED_ITEMS = [
 {id:1, title:"Our Ndebele Heritage - Ubuntu & Maths", grade:"ECD B", subject:"Heritage Studies", term:"Term 1", content:"Ubuntu sharing: 12 amasi cups / 4 children = 3 each."},
