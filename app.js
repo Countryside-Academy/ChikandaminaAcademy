@@ -1,7 +1,7 @@
 const DEFAULT_LEVELS = ["ECD A","ECD B","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7"];
 const DEFAULT_SUBJECTS = ["English","Mathematics","ChiShona","Physical Education and Arts","Social Science","Science and Technology"];
 const DEFAULT_TERMS = ["Term 1","Term 2","Term 
-    const SEED_ITEMS = [10, title:"ZIMSEC Heritage: Map Skills Revision", grade:"Grade 7", subject:"Social Science", term:"Term 3", content:"REVISION: Map symbols, 4 & 8 compass points, scale. Remember Mberengwa on Zimbabwe map."},
+const SEED_ITEMS = [10, title:"ZIMSEC Heritage: Map Skills Revision", grade:"Grade 7", subject:"Social Science", term:"Term 3", content:"REVISION: Map symbols, 4 & 8 compass points, scale. Remember Mberengwa on Zimbabwe map."},
 {id:11, title:"ZIMSEC Maths: Fractions & Decimals", grade:"Grade 7", subject:"Mathematics", term:"Term 3", content:"REVISION: Convert fraction to decimal. Example: 1/2 = 0.5, 1/4 = 0.25. BODMAS."},
 {id:12, title:"ZIMSEC English: Comprehension Tricks", grade:"Grade 7", subject:"English", term:"Term 3", content:"REVISION: How to pass comprehension: Read 2 times, underline key words, answer in full sentences."},
 {id:13, title:"ZIMSEC Science: Crops & Soils Mberengwa", grade:"Grade 7", subject:"Science and Technology", term:"Term 3", content:"REVISION: Small grains for Mberengwa: Sorghum, Millet, Rapoko. Need little rain."},
