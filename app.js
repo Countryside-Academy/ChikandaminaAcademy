@@ -1,11 +1,15 @@
 const DEFAULT_LEVELS = ["ECD A","ECD B","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7"];
 const DEFAULT_SUBJECTS = ["Heritage Studies","Mathematics","English","Agriculture","Science & Technology","Arts"];
-const DEFAULT_TERMS = ["Term 1","Term 2","Term const SEED_ITEMS = [
-  {id:1, title:"Our Ndebele Heritage..."}
-  {id:2, title:"Counting with Seeds"...}
-  {id:3, title:"My Family - Usapho Lwami"...}
-  {id:4, title:"Fractions and mixed numbers"}
+const DEFAULT_TERMS = ["Term 1","Term 2","Term const SEED_{id:1, title:"Our Ndebele Heritage - Ubuntu & Maths", grade:"ECD B", subject:"Heritage Studies", term:"Term 1", content:"Ubuntu sharing: 12 amasi cups / 4 children = 3 each. Fractions in culture! Chikandamina = knowledge that sustains."},
+{id:2, title:"Counting with Seeds - Imbewu", grade:"Grade 1", subject:"Maths", term:"Term 1", content:"1 hectare = 10,000m2. Maize spacing 75cm x 25cm = 53,333 plants per hectare. Heritage counting!"},
+{id:3, title:"My Family - Usapho Lwami", grade:"Grade 2", subject:"Maths", term:"Term 1", content:"Family of 5 shares 1 loaf = 1/5 each. 2 1/2 loaves = 2 full + half. Everyday fractions."},
+{id:4, title:"Fractions and mixed numbers", grade:"Grade 4", subject:"Maths", term:"Term 2", content:"3/5 = 3 of 5 equal parts. Garden 5 sections, 3 maize = 3/5. 1/2=2/4=3/6. Simplify 6/12=1/2. Gogo divides sadza into 4 = 1/4 each."},
+{id:5, title:"Percentages and Real Life", grade:"Grade 5", subject:"Maths", term:"Term 2", content:"50%=1/2, 25%=1/4. Airtime $10, use 20% = $2. Price $200 +10% = $220. 400 learners, 55% girls = 220 girls."},
+{id:6, title:"Chikandamina - Heritage Maths", grade:"Grade 6", subject:"Heritage Maths", term:"Term 3", content:"Rondavel = cylinder + cone. Circumference = pi x diameter. Dura 500kg / 2kg per day = 250 days. Ndebele patterns use symmetry. Ancestors were mathematicians!"},
+{id:7, title:"Algebra Basics - Cattle Counting", grade:"Grade 7", subject:"Maths", term:"Term 3", content:"x = unknown. x+5=12, x=7. Balance: x+3=10 => x=7. Counting cattle needs algebra daily!"},
+{id:8, title:"Area and Perimeter - Fields", grade:"Grade 6", subject:"Agriculture", term:"Term 2", content:"Field 100m x 50m. Perimeter = 2x(L+W)=300m. Area=5000m2. Practical heritage maths for farming."}
 ];
+
 
 
 
