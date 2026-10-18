@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d32">
+  <meta name="description" content="Chikandamina Academy Grade 7 Mathematics lessons, with Zimbabwean Heritage-Based learning contexts.">
+  <title>Chikandamina Academy | Grade 7 Mathematics</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to lessons</a>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">CA</div>
+      <div>
+        <div class="brand-name">CHIKANDAMINA ACADEMY</div>
+        <div class="brand-subtitle">Learn • Discover • Create • Succeed</div>
+      </div>
+    </div>
+    <div class="header-tools">
+      <span class="offline-pill"><span class="status-dot"></span> Learning module</span>
+      <button id="printBtn" class="button button-quiet" type="button">Print lesson</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Course navigation">
+      <div class="side-label">MY CLASSROOM</div>
+      <div class="class-card">
+        <div class="class-icon">7</div>
+        <div><strong>Grade 7</strong><span>Mathematics</span></div>
+      </div>
+      <nav class="course-nav">
+        <a class="nav-item active" href="#main"><span>▦</span> Lessons</a>
+        <a class="nav-item" href="#practice"><span>✓</span> Quick practice</a>
+        <a class="nav-item" href="#progress"><span>◷</span> My progress</a>
+      </nav>
+      <div class="side-note">
+        <strong>Heritage connection</strong>
+        <p>Explore maths through farming, local markets, crafts, building and community life in Zimbabwe.</p>
+      </div>
+      <div class="offline-note"><span aria-hidden="true">●</span> Designed for offline use</div>
+    </aside>
+
+    <main id="main" class="main-content">
+      <section class="welcome">
+        <div class="welcome-copy">
+          <div class="eyebrow">GRADE 7 • MATHEMATICS</div>
+          <h1>Maths that connects<br class="desktop-break"> to everyday life.</h1>
+          <p>Build confidence with clear explanations, worked examples and Zimbabwean real-life contexts.</p>
+          <div class="welcome-meta"><span>📘 4 starter lessons</span><span>⏱ Learn at your own pace</span></div>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="art-sun"></div><div class="art-book">∑<br><small>123</small></div>
+          <div class="art-leaf leaf-one"></div><div class="art-leaf leaf-two"></div>
+          <div class="art-caption">Think • Try • Understand</div>
+        </div>
+      </section>
+
+      <section class="section-heading">
+        <div><div class="eyebrow">YOUR LEARNING PATH</div><h2>Lessons</h2></div>
+        <span id="lessonCount" class="count-chip">0 of 4 completed</span>
+      </section>
+
+      <div class="lesson-grid" id="lessonGrid" aria-live="polite"></div>
+
+      <section id="lessonPanel" class="lesson-panel hidden" aria-live="polite">
+        <div class="lesson-panel-top">
+          <div><div id="panelKicker" class="eyebrow">LESSON</div><h2 id="panelTitle">Lesson title</h2></div>
+          <button id="closeLesson" class="icon-button" aria-label="Close lesson" type="button">✕</button>
+        </div>
+        <div id="panelBody" class="lesson-body"></div>
+        <div class="lesson-actions">
+          <button id="markComplete" class="button button-primary" type="button">Mark lesson complete</button>
+          <button id="panelPrint" class="button button-secondary" type="button">Print this lesson</button>
+        </div>
+      </section>
+
+      <section id="practice" class="practice-section">
+        <div class="section-heading compact">
+          <div><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h2>Quick practice</h2></div>
+          <span class="practice-tag">5 questions</span>
+        </div>
+        <p class="section-intro">Try these questions without looking at the answers. Your score is saved on this device.</p>
+        <form id="quizForm" class="quiz-card">
+          <div id="quizQuestions"></div>
+          <div class="quiz-footer">
+            <button class="button button-primary" type="submit">Check my answers</button>
+            <button id="resetQuiz" class="button button-quiet" type="button">Try again</button>
+          </div>
+          <div id="quizResult" class="quiz-result hidden" role="status"></div>
+        </form>
+      </section>
+
+      <section id="progress" class="progress-section">
+        <div class="progress-card">
+          <div class="progress-icon">★</div>
+          <div class="progress-copy"><h2>Your learning progress</h2><p id="progressText">Complete a lesson to start tracking progress.</p>
+            <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+          </div>
+          <div class="progress-number"><strong id="progressPercent">0%</strong><span>lessons</span></div>
+        </div>
+        <p class="privacy-note">Progress is stored in this browser on this device. This starter module does not yet sync between devices or provide secure learner accounts.</p>
+      </section>
+
+      <footer class="footer">
+        <div><strong>Chikandamina Academy</strong><span>Zimbabwean Heritage-Based learning • Grade 7 Mathematics</span></div>
+        <button id="shareBtn" class="button button-secondary" type="button">Share this module</button>
+      </footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
