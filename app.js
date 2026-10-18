@@ -1,5 +1,13 @@
 const DEFAULT_LEVELS = ["ECD A","ECD B","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7"];
-
+const DEFAULT_LEVELS = ["ECD A","ECD B","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7"];
+const DEFAULT_SUBJECTS = ["English","Mathematics","ChiShona","Physical Education and Arts","Social Science","Science and Technology"];
+const DEFAULT_TERMS = ["Term 1","Term 2","Term 3"];
+const SEED_ITEMS = [
+{id:1, title:"Our Ndebele Heritage - Ubuntu", grade:"ECD B", subject:"Social Science", term:"Term 1", content:"Ubuntu sharing: 12 amasi cups / 4 children = 3 each. Chikandamina = knowledge that sustains our community. Heritage values."},
+{id:2, title:"Counting with Seeds - Imbewu", grade:"Grade 1", subject:"Mathematics", term:"Term 1", content:"1 hectare = 10,000m2. Maize spacing 75cm x 25cm = 53,333 plants per hectare. Practical maths from farming."},
+{id:3, title:"My Family - Mhuri Yangu", grade:"Grade 2", subject:"ChiShona", term:"Term 1", content:"Mhuri = family. Learning ChiShona family names: Amai, Baba, Mwana. Usapho Lwami - family sharing 1 loaf = 1/5 each."},
+{id:4, title:"Fractions and Equivalent Forms", grade:"Grade 4", subject:"Mathematics", term:"Term 2", content:"3/5 = 3 of 5 equal parts. Garden 5 sections, 3 maize = 3/5. 1/2=2/4=3/6. Simplify 6/12=1/2."},
+{id:5, title:"English - Percentages in Real Life", grade:"Grade 5", subject:"English", term:"Term 2", content:"Vocabulary: percent, discount, airtime. 50%=half
 const DEFAULT_TERMS = ["Term 1","Term 2","Term 3"];
 const SEED_ITEMS = [
 {id:1, title:"Our Ndebele Heritage - Ubuntu & Maths", grade:"ECD B", subject:"Heritage Studies", term:"Term 1", content:"Ubuntu sharing: 12 amasi cups / 4 children = 3 each."},
