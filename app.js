@@ -1,1 +1,0 @@
-nit);window.addEventListener('load', init);setTimeout(init, 800);
