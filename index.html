@@ -1,116 +1,92 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#123d32">
-  <meta name="description" content="Chikandamina Academy Grade 7 Mathematics lessons, with Zimbabwean Heritage-Based learning contexts.">
-  <title>Chikandamina Academy | Grade 7 Mathematics</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#14532d">
+<title>Chikandamina Academy</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to lessons</a>
-  <header class="topbar">
-    <div class="brand">
-      <div class="brand-mark" aria-hidden="true">CA</div>
-      <div>
-        <div class="brand-name">CHIKANDAMINA ACADEMY</div>
-        <div class="brand-subtitle">Learn • Discover • Create • Succeed</div>
+<header class="topbar">
+  <div class="brand-mark">CA</div>
+  <div class="brand"><h1>Chikandamina Academy</h1><p>Learn • Create • Preserve Our Heritage</p></div>
+  <button id="installBtn" class="secondary hidden">Install app</button>
+</header>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="welcome"><small>WELCOME</small><strong id="welcomeName">School Portal</strong></div>
+    <label for="roleSelect">Preview portal</label>
+    <select id="roleSelect">
+      <option value="learner">Learner</option><option value="teacher">Teacher</option>
+      <option value="parent">Parent</option><option value="admin">Administrator</option>
+    </select>
+    <nav>
+      <button class="nav active" data-view="dashboard">▦ Dashboard</button>
+      <button class="nav" data-view="learning">▤ Lessons & Revision</button>
+      <button class="nav" data-view="assessments">✓ Tests & Exams</button>
+      <button class="nav" data-view="projects">✎ Projects</button>
+      <button class="nav" data-view="manage">⚙ Manage Content</button>
+    </nav>
+    <p class="offline"><span></span> Offline-ready starter</p>
+  </aside>
+  <main>
+    <section id="dashboard" class="view">
+      <div class="hero"><div><p class="eyebrow">HERITAGE-BASED LEARNING • 2024–2030</p><h2>Welcome to your learning community.</h2><p>Lessons, assessments and projects for ECD A through Grade 7.</p></div><div class="hero-symbol">✦</div></div>
+      <div class="stats">
+        <article class="stat"><span>School levels</span><strong>8</strong><small>ECD A to Grade 7</small></article>
+        <article class="stat"><span>Subject areas</span><strong>6</strong><small>Core learning areas</small></article>
+        <article class="stat"><span>Learning items</span><strong id="itemCount">0</strong><small>Saved on this device</small></article>
       </div>
-    </div>
-    <div class="header-tools">
-      <span class="offline-pill"><span class="status-dot"></span> Learning module</span>
-      <button id="printBtn" class="button button-quiet" type="button">Print lesson</button>
-    </div>
-  </header>
+      <div class="section-head"><div><h3>Explore learning</h3><p>Choose a level and subject to find content.</p></div></div>
+      <div class="filters"><select id="dashGrade"></select><select id="dashSubject"></select><button id="browseBtn">Browse content</button></div>
+      <div class="notice"><strong>Important:</strong> This is the first working prototype. It stores sample content on this device. Secure accounts, shared online records and real parent/teacher access require a server and database before public launch.</div>
+    </section>
 
-  <div class="layout">
-    <aside class="sidebar" aria-label="Course navigation">
-      <div class="side-label">MY CLASSROOM</div>
-      <div class="class-card">
-        <div class="class-icon">7</div>
-        <div><strong>Grade 7</strong><span>Mathematics</span></div>
-      </div>
-      <nav class="course-nav">
-        <a class="nav-item active" href="#main"><span>▦</span> Lessons</a>
-        <a class="nav-item" href="#practice"><span>✓</span> Quick practice</a>
-        <a class="nav-item" href="#progress"><span>◷</span> My progress</a>
-      </nav>
-      <div class="side-note">
-        <strong>Heritage connection</strong>
-        <p>Explore maths through farming, local markets, crafts, building and community life in Zimbabwe.</p>
-      </div>
-      <div class="offline-note"><span aria-hidden="true">●</span> Designed for offline use</div>
-    </aside>
+    <section id="learning" class="view hidden">
+      <div class="section-head"><div><p class="eyebrow">LEARNING LIBRARY</p><h2>Lessons & revision</h2><p>Filter by school level and subject.</p></div></div>
+      <div class="filters"><select id="learnGrade"></select><select id="learnSubject"></select><input id="learnSearch" placeholder="Search titles or topics"></div>
+      <div id="lessonList" class="cards"></div>
+    </section>
 
-    <main id="main" class="main-content">
-      <section class="welcome">
-        <div class="welcome-copy">
-          <div class="eyebrow">GRADE 7 • MATHEMATICS</div>
-          <h1>Maths that connects<br class="desktop-break"> to everyday life.</h1>
-          <p>Build confidence with clear explanations, worked examples and Zimbabwean real-life contexts.</p>
-          <div class="welcome-meta"><span>📘 4 starter lessons</span><span>⏱ Learn at your own pace</span></div>
+    <section id="assessments" class="view hidden">
+      <div class="section-head"><div><p class="eyebrow">CHECK UNDERSTANDING</p><h2>Tests & examinations</h2><p>Practice tests, revision tests, end-of-term and end-of-year examinations.</p></div></div>
+      <div class="filters"><select id="examGrade"></select><select id="examSubject"></select></div>
+      <div id="assessmentList" class="cards"></div>
+    </section>
+
+    <section id="projects" class="view hidden">
+      <div class="section-head"><div><p class="eyebrow">LEARN BY DOING</p><h2>Projects</h2><p>Practical tasks that connect learning to home, school and community.</p></div></div>
+      <div id="projectList" class="cards"></div>
+    </section>
+
+    <section id="manage" class="view hidden">
+      <div class="section-head"><div><p class="eyebrow">CONTENT WORKSPACE</p><h2>Manage learning content</h2><p>Administrator and teacher demo controls. Changes are saved in this browser only.</p></div></div>
+      <div class="notice warning">Demo access control only: changing the role selector is not secure authentication. Do not put private student information into this prototype.</div>
+      <form id="contentForm" class="form-card">
+        <h3 id="formHeading">Add learning item</h3>
+        <input type="hidden" id="editId">
+        <div class="form-grid">
+          <label>Content type<select id="itemType"><option value="lesson">Lesson / Revision</option><option value="assessment">Test / Examination</option><option value="project">Project</option></select></label>
+          <label>School level<select id="itemGrade"></select></label>
+          <label>Subject<select id="itemSubject"></select></label>
+          <label>Term<select id="itemTerm"><option>Any term</option><option>Term 1</option><option>Term 2</option><option>Term 3</option><option>Year-end</option></select></label>
+          <label class="wide">Title<input id="itemTitle" required placeholder="e.g. Fractions: equivalent fractions"></label>
+          <label class="wide">Topic / learning objective<input id="itemTopic" placeholder="What should learners understand or do?"></label>
+          <label class="wide">Instructions or lesson notes<textarea id="itemBody" rows="5" placeholder="Write lesson notes, questions, project steps or instructions..."></textarea></label>
+          <label class="wide">Questions (optional; one per line)<textarea id="itemQuestions" rows="4" placeholder="1. ...&#10;2. ..."></textarea></label>
+          <label class="wide">Answer guide / marking scheme (optional)<textarea id="itemAnswers" rows="3" placeholder="Teacher's answer guide. Do not show before an assessment."></textarea></label>
         </div>
-        <div class="welcome-art" aria-hidden="true">
-          <div class="art-sun"></div><div class="art-book">∑<br><small>123</small></div>
-          <div class="art-leaf leaf-one"></div><div class="art-leaf leaf-two"></div>
-          <div class="art-caption">Think • Try • Understand</div>
-        </div>
-      </section>
-
-      <section class="section-heading">
-        <div><div class="eyebrow">YOUR LEARNING PATH</div><h2>Lessons</h2></div>
-        <span id="lessonCount" class="count-chip">0 of 4 completed</span>
-      </section>
-
-      <div class="lesson-grid" id="lessonGrid" aria-live="polite"></div>
-
-      <section id="lessonPanel" class="lesson-panel hidden" aria-live="polite">
-        <div class="lesson-panel-top">
-          <div><div id="panelKicker" class="eyebrow">LESSON</div><h2 id="panelTitle">Lesson title</h2></div>
-          <button id="closeLesson" class="icon-button" aria-label="Close lesson" type="button">✕</button>
-        </div>
-        <div id="panelBody" class="lesson-body"></div>
-        <div class="lesson-actions">
-          <button id="markComplete" class="button button-primary" type="button">Mark lesson complete</button>
-          <button id="panelPrint" class="button button-secondary" type="button">Print this lesson</button>
-        </div>
-      </section>
-
-      <section id="practice" class="practice-section">
-        <div class="section-heading compact">
-          <div><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h2>Quick practice</h2></div>
-          <span class="practice-tag">5 questions</span>
-        </div>
-        <p class="section-intro">Try these questions without looking at the answers. Your score is saved on this device.</p>
-        <form id="quizForm" class="quiz-card">
-          <div id="quizQuestions"></div>
-          <div class="quiz-footer">
-            <button class="button button-primary" type="submit">Check my answers</button>
-            <button id="resetQuiz" class="button button-quiet" type="button">Try again</button>
-          </div>
-          <div id="quizResult" class="quiz-result hidden" role="status"></div>
-        </form>
-      </section>
-
-      <section id="progress" class="progress-section">
-        <div class="progress-card">
-          <div class="progress-icon">★</div>
-          <div class="progress-copy"><h2>Your learning progress</h2><p id="progressText">Complete a lesson to start tracking progress.</p>
-            <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
-          </div>
-          <div class="progress-number"><strong id="progressPercent">0%</strong><span>lessons</span></div>
-        </div>
-        <p class="privacy-note">Progress is stored in this browser on this device. This starter module does not yet sync between devices or provide secure learner accounts.</p>
-      </section>
-
-      <footer class="footer">
-        <div><strong>Chikandamina Academy</strong><span>Zimbabwean Heritage-Based learning • Grade 7 Mathematics</span></div>
-        <button id="shareBtn" class="button button-secondary" type="button">Share this module</button>
-      </footer>
-    </main>
-  </div>
-  <script src="app.js"></script>
-</body>
-</html>
+        <div class="actions"><button type="submit">Save content</button><button type="button" id="cancelEdit" class="secondary">Clear form</button></div>
+      </form>
+      <div class="section-head"><div><h3>Saved content</h3><p>Edit or remove items on this device.</p></div><button id="exportBtn" class="secondary">Export backup</button></div>
+      <label class="import-label">Import a previous backup <input type="file" id="importFile" accept="application/json"></label>
+      <div id="manageList" class="manage-list"></div>
+    </section>
+    <footer>Chikandamina Academy • Primary learning portal • Prototype build 0.1</footer>
+  </main>
+</div>
+<dialog id="detailDialog"><div class="dialog-head"><h2 id="detailTitle"></h2><button id="closeDialog" class="secondary">Close</button></div><div id="detailContent"></div></dialog>
+<script src="app.js"></script>
+</body></html>
