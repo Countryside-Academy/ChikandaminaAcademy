@@ -1,0 +1,20 @@
+const DEFAULT_LEVELS = ["ECD A","ECD B","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7"];
+const DEFAULT_SUBJECTS = ["Heritage Studies","Maths","Heritage Maths","English","Agriculture"];
+const DEFAULT_TERMS = ["Term 1","Term 2","Term 3"];
+const SEED_ITEMS = [
+{id:1, title:"Our Ndebele Heritage - Ubuntu & Maths", grade:"ECD B", subject:"Heritage Studies", term:"Term 1", content:"Ubuntu sharing: 12 amasi cups / 4 children = 3 each."},
+{id:2, title:"Counting with Seeds - Imbewu", grade:"Grade 1", subject:"Maths", term:"Term 1", content:"1 hectare = 10,000m2. Maize spacing 75cm x 25cm = 53,333 plants per hectare."},
+{id:3, title:"My Family - Usapho Lwami", grade:"Grade 2", subject:"Maths", term:"Term 1", content:"Family of 5 shares 1 loaf = 1/5 each. 2 1/2 loaves = 2 full + half."},
+{id:4, title:"Fractions and mixed numbers", grade:"Grade 4", subject:"Maths", term:"Term 2", content:"3/5 = 3 of 5 parts. Garden 5 sections, 3 maize = 3/5. 1/2=2/4=3/6."},
+{id:5, title:"Percentages and Real Life", grade:"Grade 5", subject:"Maths", term:"Term 2", content:"50%=1/2, 25%=1/4. Airtime $10, 20% = $2. Price $200 +10% = $220."},
+{id:6, title:"Chikandamina - Heritage Maths", grade:"Grade 6", subject:"Heritage Maths", term:"Term 3", content:"Rondavel = cylinder + cone. Dura 500kg /2kg =250 days."},
+{id:7, title:"Algebra Basics - Cattle Counting", grade:"Grade 7", subject:"Maths", term:"Term 3", content:"x = unknown. x+5=12, x=7. Balance: x+3=10 => x=7."},
+{id:8, title:"Area and Perimeter - Fields", grade:"Grade 6", subject:"Agriculture", term:"Term 2", content:"Field 100m x 50m. Perimeter=300m. Area=5000m2."}
+];
+function getStore(){try{let s=JSON.parse(localStorage.getItem('chikandamina_store')||'null');if(!s||!s.items||s.items.length===0)return{items:SEED_ITEMS};return s;}catch(e){return{items:SEED_ITEMS};}}
+let store=getStore();
+function fillSelect(id, options, includeAll){const el=document.getElementById(id);if(!el)return;el.innerHTML='';if(includeAll){let o=document.createElement('option');o.value='All';o.textContent='All';el.appendChild(o);}options.forEach(v=>{let o=document.createElement('option');o.value=v;o.textContent=v;el.appendChild(o);});}
+function populateSelects(){fillSelect('itemGrade', DEFAULT_LEVELS, false);fillSelect('itemSubject', DEFAULT_SUBJECTS, false);fillSelect('itemTerm', DEFAULT_TERMS, false);fillSelect('filterLevel', DEFAULT_LEVELS, true);fillSelect('filterSubject', DEFAULT_SUBJECTS, true);fillSelect('filterTerm', DEFAULT_TERMS, true);}
+function renderList(){const list=document.getElementById('itemList');if(!list)return;const fLevel=document.getElementById('filterLevel')?.value||'All';const fSubject=document.getElementById('filterSubject')?.value||'All';const fTerm=document.getElementById('filterTerm')?.value||'All';let filtered=store.items.filter(it=>{if(fLevel!=='All'&&it.grade!==fLevel)return false;if(fSubject!=='All'&&it.subject!==fSubject)return false;if(fTerm!=='All'&&it.term!==fTerm)return false;return true;});list.innerHTML=filtered.map(it=>`<div style="border:1px solid #ddd;border-radius:12px;padding:14px;background:#fff;margin-bottom:12px"><div style="display:flex;justify-content:space-between"><strong>${it.title}</strong><span style="font-size:11px;background:#f0fdf4;color:#166534;padding:2px 8px;border-radius:10px">${it.grade}</span></div><div style="font-size:12px;color:#888;margin:4px 0">${it.term} • ${it.subject}</div><div style="font-size:14px;line-height:1.5;margin-top:8px">${it.content}</div></div>`).join('')||'<p>No lessons match filter</p>';const count=document.getElementById('itemCount');if(count)count.textContent=`${filtered.length} lessons`;}
+function init(){populateSelects();renderList();document.getElementById('filterLevel')?.addEventListener('change', renderList);document.getElementById('filterSubject')?.addEventListener('change', renderList);document.getElementById('filterTerm')?.addEventListener('change', renderList);}
+document.addEventListener('DOMContentLoaded', init);window.addEventListener('load', init);setTimeout(init, 800);
