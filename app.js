@@ -1,13 +1,13 @@
 const DEFAULT_LEVELS = ["ECD A","ECD B","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7"];
 const DEFAULT_SUBJECTS = ["Heritage Studies","Mathematics","English","Agriculture","Science & Technology","Arts"];
-const DEFAULT_TERMS = ["Term 1","Term 2","Term 3"];
-
-const SEED_ITEMS = [
-  {id:1,title:"Our Ndebele Heritage - Ubuntu",grade:"Grade 3",subject:"Heritage Studies",term:"Term 1",type:"Lesson",topic:"Ubuntu/Hunhu",instructions:"Ubuntu is about togetherness. In Ndebele culture we say 'Umuntu ngumuntu ngabantu'. Learn how we help each other.",questions:"What does Ubuntu mean?",answer:"A person is a person through other people."},
-  {id:2,title:"Counting with Seeds",grade:"ECD A",subject:"Mathematics",term:"Term 1",type:"Lesson",topic:"Counting 1-10",instructions:"Use groundnuts or maize seeds to count 1-10.",questions:"Count 5 seeds",answer:"1,2,3,4,5"},
-  {id:3,title:"My Family - Usapho Lwami",grade:"Grade 1",subject:"Heritage Studies",term:"Term 1",type:"Lesson",topic:"Family",instructions:"Learn family names: Ugogo, Umkhulu, Ubaba, Umama.",questions:"Who is Ugogo?",answer:"Grandmother"},
-  {id:4,title:"Fractions and mixed numbers",grade:"Grade 5",subject:"Mathematics",term:"Term 2",type:"Lesson",topic:"Fractions",instructions:"A fraction shows equal parts of a whole. For 3/5 denominator is total parts. Example garden divided. 1/2 = 2/4. Simplify 6/12. Heritage: sharing amasimu fields.",questions:"Simplify 6/12",answer:"1/2"}
+const DEFAULT_TERMS = ["Term 1","Term 2","Term const SEED_ITEMS = [
+  {id:1, title:"Our Ndebele Heritage..."}
+  {id:2, title:"Counting with Seeds"...}
+  {id:3, title:"My Family - Usapho Lwami"...}
+  {id:4, title:"Fractions and mixed numbers"}
 ];
+
+
 
 function getStore(){
   try{
